@@ -1,24 +1,57 @@
-
 <!DOCTYPE html>
 <html lang="id">
 <head>
     <meta charset="UTF-8">
-    <title>Flask App First</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <title>Praktikum Flask - Method POST</title>
+
+    <link rel="stylesheet"
+    href="{{ url_for('static', filename='styles.css') }}">
 </head>
+
 <body>
+
     <div class="container">
-        <h1>Flask App First 🚀</h1>
 
-        <form action="/greet" method="POST">
-            <input
-                type="text"
-                name="parName"
-                placeholder="Masukkan nama Anda"
-            >
+        <h2>Praktikum Flask - Method POST 🚀</h2>
 
-            <button type="submit">Submit</button>
+        <form action="/submit" method="POST">
+
+            <div class="form-group">
+                <label>Nama Lengkap:</label>
+                <input
+                    type="text"
+                    name="nama"
+                    placeholder="Masukkan nama..."
+                >
+            </div>
+
+            <div class="form-group">
+                <label>NIM:</label>
+                <input
+                    type="text"
+                    name="nim"
+                    placeholder="Masukkan NIM..."
+                >
+            </div>
+
+            <button type="submit">
+                Kirim Data (POST)
+            </button>
+
         </form>
+
+        {% if nama is not none %}
+
+        <div class="result-box">
+            <strong>Hasil Parsing Parameter POST:</strong>
+
+            <p>Nama: {{ nama }}</p>
+            <p>NIM: {{ nim }}</p>
+        </div>
+
+        {% endif %}
+
     </div>
+
 </body>
 </html>
