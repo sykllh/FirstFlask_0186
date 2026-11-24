@@ -1,0 +1,24 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Flask App First</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Flask App First 🚀</h1>
+
+        <form action="/greet" method="POST">
+            <input
+                type="text"
+                name="parName"
+                placeholder="Masukkan nama Anda"
+            >
+
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+</body>
+</html>
